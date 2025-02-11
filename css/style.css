@@ -86,8 +86,8 @@ body {
     overflow: hidden;
 
     .heart {
-        animation: float 6s infinite ease-in-out;
-        position: relative;
+        animation: float 3s infinite ease-in;
+        position: fixed;
 
         body &,
         body &::before,

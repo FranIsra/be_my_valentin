@@ -1,7 +1,7 @@
 window.onload = () => {
-    for (let index = 0; index < 20; index++) createHeart();
+    for (let index = 0; index < 10; index++) createHeart();
 
-    setInterval(createHeart, 150);
+    setInterval(createHeart, 200);
 }
 
 const frasesParaAceptar = [
@@ -46,10 +46,11 @@ function createHeart() {
     heart.classList.add('heart');
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.top = Math.random() * 100 + 'vh';
-    heart.style.animationDuration = Math.random() * 4 + 3 + 's';
     heart.style.opacity = Math.random() / 2 - 0.3;
     heart.style.height = heart.style.width;
     heartContainer.append(heart);
+    let animation = window.getComputedStyle(heart).animationDuration;
+    animation = animation.includes('ms') ? parseFloat(animation) : parseFloat(animation) * 1000;
 
-    setTimeout(() => heart.remove(), 6000);
+    setTimeout(() => heart.remove(), animation * 1.5);
 }
