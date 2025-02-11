@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: #333;
+
+    &.acept {
+        background: #0e7026;
+    }
+
+    &.reject {
+        background: #701f48;
+    }
+}
+
+.container {
+    line-height: 1.6;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+
+    h1 {
+        font-size: 30px;
+        text-shadow: #242424 2px 2px 2px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 15px;
+            cursor: pointer;
+            border: solid 3px transparent;
+
+            &.acept-btn {
+                background:
+                    linear-gradient(#022c0b, #022c0b) padding-box,
+                    linear-gradient(90deg, #0d881d, #19c913, #0e7026) border-box;
+
+                &:hover {
+                    background:
+                        linear-gradient(90deg, #0d881d, #19c913, #0e7026) padding-box,
+                        linear-gradient(#022c0b, #022c0b) border-box;
+                }
+            }
+
+            &.reject-btn {
+                background:
+                    linear-gradient(#360303, #360303) padding-box,
+                    linear-gradient(90deg, #b83228, #b1281f, #6d0c14) border-box;
+
+                &:hover {
+                    background:
+                        linear-gradient(90deg, #b83228, #b1281f, #6d0c14) padding-box,
+                        linear-gradient(#360303, #360303) border-box;
+                }
+            }
+        }
+    }
+}
+
+.heart {
+    animation: float 6s infinite ease-in-out;
+
+    body &,
+    body &::before,
+    body &::after {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: white;
+        z-index: -1;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        border-radius: 50%;
+    }
+
+    &::before {
+        top: -15px;
+        left: 0;
+    }
+
+    &::after {
+        left: 15px;
+        top: 0;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: .1;
+    }
+
+    100% {
+        transform: translateY(-40px) rotate(-45deg);
+        opacity: 0;
+    }
+}
