@@ -42,13 +42,14 @@ function rejectFn() {
 
 function createHeart() {
     const heart = document.createElement('div');
+    const heartContainer = document.getElementById('heart-container');
     heart.classList.add('heart');
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.top = Math.random() * 100 + 'vh';
     heart.style.animationDuration = Math.random() * 4 + 3 + 's';
     heart.style.opacity = Math.random() / 2 - 0.3;
     heart.style.height = heart.style.width;
-    document.body.appendChild(heart);
+    heartContainer.append(heart);
 
     setTimeout(() => heart.remove(), 6000);
 }
