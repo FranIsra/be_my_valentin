@@ -84,6 +84,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: -1;
 
     .heart {
         animation: float 3s infinite ease-in;
@@ -95,7 +96,6 @@ body {
             width: 30px;
             height: 30px;
             background-color: white;
-            z-index: -1;
         }
 
         &::before,
